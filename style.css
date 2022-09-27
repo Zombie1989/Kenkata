@@ -845,6 +845,42 @@ html, body {
         padding-top: 30px;
     }
 
+/* Login-registration page */
+
+.home-account {
+    background-color: var(--color-theme-lightdark);
+    height: 140px;
+    padding-top: 2.75rem;
+}
+    .home-account .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+        .home-account .container h1 {
+            color: var(--color-theme);
+            font-size: 2.5rem;
+            font-weight: var(--font-weight-medium);
+        }
+            .home-account .container .breadcrumb {
+                margin: 0;
+            }
+            .home-account .container .breadcrumb a {
+                color: var(--color-theme);
+                text-decoration: none;
+            }
+            .home-account .container .breadcrumb a:hover {
+                color: var(--color-white);
+            }
+            .home-account .container .breadcrumb .active {
+                color: var(--color-white);
+            }
+
+
+
+
+
+            
 @media (min-width: 578px) {
 
 }
