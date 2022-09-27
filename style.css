@@ -93,7 +93,7 @@ html, body {
     color: var(--color-white);
     border-radius: var(--border-radius-large);
     font-weight: var(--font-weight-medium);
-    padding: 1rem 33em;
+    padding: 1rem 3rem;
     transition: 200ms ease-in;
     border: none;
 }
@@ -142,8 +142,110 @@ html, body {
         font-weight: var(--font-weight-regular);
         padding: 1.2rem;
     }
-  
+ 
+/* cloth-cards with overlay */ 
 
+.instock {
+    color: var(--color-product-instock);
+}
+.outofstock {
+    color: var(--color-product-outofstock);
+}
+
+.cloth-cards {
+    padding: 0;
+}
+    .cloth-cards .card {
+        position: relative;
+        height: 400px;
+        width: 400px;
+        overflow: hidden;
+        background-color: var(--color-grey-3);
+    }
+        .cloth-cards .card .card-body {
+            position: absolute;
+            bottom: 0;
+            height: 3.4rem;
+            color: var(--color-white);
+            z-index: 1;
+            transition: 200ms ease-in;
+            font-size: var(--font-size-18);;
+            width: 100%;
+        }
+            .cloth-cards .card:hover .card-body {
+                height: 40%;
+            }
+            .cloth-cards .card .card-body h2 {
+                font-size: var(--font-size-18);
+                margin-bottom: 2rem;
+                transition: 200ms ease-in;
+                font-weight: var(--font-weight-regular);
+            }
+                .cloth-cards .card:hover .card-body h2 {
+                    margin-bottom: 0;
+                }
+            .cloth-cards .card .card-body button {
+                background-color: transparent;
+                color: var(--color-white);
+                border: 1px solid var(--color-white);
+                padding-left: 0.7rem;
+                padding-right: 0.7rem;
+                margin: 0.5rem 0;                
+            }
+            .cloth-cards .card .card-body .card-price {
+                text-decoration: line-through;
+            }
+            .cloth-cards .card .card-body .card-discount-star {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                color: var(--color-theme);
+            }
+                .cloth-cards .card .card-body .card-discount-star .card-discount-price {
+                    font-weight: var(--font-weight-medium);
+                    font-size: var(--font-size-24);
+                    margin: 0;
+                }
+        .cloth-cards .card .card-menu {
+            position: absolute;
+            right: 1.25rem;
+            top: 101%;
+            z-index: 1;
+            list-style: none;
+            margin: auto;
+            padding: 0.7rem;
+            font-size: var(--font-size-24);
+            border-radius: var(--border-radius-medium);
+            background-color: var(--color-white);
+            transition: 300ms ease-in;
+            
+        }
+            .cloth-cards .card:hover .card-menu {
+                top: 20px;
+            }
+            .cloth-cards .card .card-menu li{
+                margin-top: 0.2rem;
+                margin-bottom: 0.2rem;
+            }
+            .cloth-cards .card .card-menu li a {
+                color: var(--color-grey-0);
+            }
+                .cloth-cards .card .card-menu li a:hover {
+                    color: var(--color-theme);
+                }
+        .cloth-cards .card .card-background {
+            position: absolute;
+            bottom: 0;
+            height: 3.4rem;
+            width: 100%;
+            background-color: var(--color-theme-dark);
+            opacity: 0.90;
+            transition: 300ms ease-in;
+        }
+            .cloth-cards .card:hover .card-background {
+                height: 100%;
+            }
 
 
 
@@ -426,7 +528,6 @@ html, body {
             font-size: 0.8rem;
             margin-top: 0.6rem;
         }
-
         
 #category-box-1{
     grid-column: 1 / 2;
@@ -457,14 +558,292 @@ html, body {
     grid-row: 3 / -1 ;
 }
 
+/* 30% off banner */
+
+.banner-30 {
+    background-color: var(--color-grey-1);
+    margin-top: 10rem;
+}
+    .banner-30 .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 418px;
+    }
+    
+    .banner-30 .banner-body-left {
+        background-color: var(--color-theme);
+        height: 100%;
+        min-width: 250px;
+        color: var(--color-white);
+        padding-top: 7rem;
+        text-align: center;
+    }
+        .banner-30 .banner-body-left h3 {
+            font-size: var(--font-size-60);
+            font-weight: var(--font-weight-bold);
+            font-family: var(--font-play);
+        }
+            .banner-30 .banner-body-left h3 span {
+                font-size: 2.25rem;
+            }
+    
+    .banner-30 .banner-body-right {
+        width: 450px;
+        color: var(--color-white);
+        font-size: var(--font-size-14);
+    }
+
+/* Flash Sale */
+
+.flash-sale {
+    background-color: var(--color-theme-lightdark);
+    height: 435px;
+
+}
+    .flash-sale .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10rem;
+    }
+    .flash-sale .flash-sale-left {
+        background-color: var(--color-theme);
+        height: 265px;
+        width: 255px;
+        text-align: center;
+        padding-top: 2rem;
+        color: var(--color-white); 
+    }
+        .flash-sale .flash-sale-left h3 {
+            font-family: var(--font-play);
+            font-size: var(--font-size-60);
+            font-weight: var(--font-weight-bold);
+        }
+        .flash-sale .flash-sale-left p {
+            font-size: var(--font-size-24);
+            font-weight: var(--font-weight-medium);
+        }
+    .flash-sale .flash-sale-right {
+        display:flex;
+        position:relative;
+        margin-top: 5rem;
+        margin-right: 2rem;
+    }
+
+        .flash-sale .flash-sale-right .flash-time {
+            text-align: center;
+            background-color: var(--color-white);
+            color: var(--color-theme);
+            font-family: var(--font-play);
+            font-weight: var(--font-weight-bold);
+            font-size: var(--font-size-36);
+            width: 109px;
+            height: 109px;
+            margin-left: 2rem;
+            padding-top: 2rem;
+            line-height: 0.5;
+            border-radius: var(--border-radius-rounded);
+            outline: 3px dashed var(--color-theme);
+        }
+            .flash-sale .flash-sale-right .flash-time span{
+                color: var(--color-dark);
+                font-family: var(--font-roboto);
+                font-weight: var(--font-weight-regular);
+                font-size: var(--font-size-16);
+            }
+        .flash-sale .flash-sale-right .btn-flash {
+            position: absolute;
+            margin-top: 9rem;
+            margin-left: 13rem; 
+        }
+
+/* Top Sellers */
+
+.grid-tops-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 340px 340px;
+    gap: 0.8rem;
+}
+    .grid-tops-container .grid-tops {
+        position: relative;
+        background-color: var(--color-grey-3);
+        overflow: hidden;
+        border-radius: var(--border-radius-small);
+    }
+        .grid-tops-container .grid-tops .card-body {
+            position: absolute;
+            bottom: 0;
+            height: 40px;
+            color: var(--color-white);
+            z-index: 1;
+            transition: 200ms ease-in;
+            font-size: var(--font-size-16);
+            width: 100%;
+            margin-left: 1rem;
+        }
+            .grid-tops-container .grid-tops:hover .card-body {
+                height: 9rem;
+            }
+            .grid-tops-container .grid-tops .card-body h2 {
+                margin-bottom: 5rem;
+                transition: 200ms ease-in;
+                font-size: var(--font-size-18);
+                font-weight: var(--font-weight-regular);
+            }
+                .grid-tops-container .grid-tops:hover .card-body h2 {
+                    margin-bottom: 0;
+                }
+            .grid-tops-container .grid-tops .card-body button {
+                background-color: transparent;
+                color: var(--color-white);
+                border: 1px solid var(--color-white);
+                padding-left: 0.7rem;
+                padding-right: 0.7rem;
+                margin: 0.5rem 0;                
+            }
+                .grid-tops-container .grid-tops .card-body .card-price {
+                    text-decoration: line-through;
+                }
+                .grid-tops-container .grid-tops .card-body .card-discount-star {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    color: var(--color-theme);
+                    padding-right: 2rem;
+                }
+                    .grid-tops-container .grid-tops .card-body .card-discount-star .card-discount-price {
+                        font-weight: var(--font-weight-medium);
+                        font-size: var(--font-size-24);
+                        margin: 0;
+                    }
+            .grid-tops-container .grid-tops .card-menu {
+                position: absolute;
+                right: 1rem;
+                top: 101%;
+                z-index: 1;
+                list-style: none;
+                margin: auto;
+                padding: 0.7rem;
+                font-size: var(--font-size-24);
+                border-radius: var(--border-radius-medium);
+                background-color: var(--color-white);
+                transition: 300ms ease-in;
+            }
+            .grid-tops-container .grid-tops:hover .card-menu {
+                top: 20px;
+            }
+            .grid-tops-container .grid-tops .card-menu li{
+                margin-top: 0.2rem;
+                margin-bottom: 0.2rem;
+            }
+                .grid-tops-container .grid-tops .card-menu li a{
+                    color: var(--color-grey-0);
+                }
+                    .grid-tops-container .grid-tops .card-menu li a:hover {
+                        color: var(--color-theme);
+                    }
+    .grid-tops-container .grid-tops .card-background {
+        position: absolute;
+        bottom: 0;
+        height: 3.4rem;
+        width: 100%;
+        background-color: var(--color-theme-dark);
+        opacity: 0.90;
+        transition: 300ms ease-in;
+    }
+        .grid-tops-container .grid-tops:hover .card-background {
+            height: 100%;
+        }
+
+#grid-tops-1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+}
+#grid-tops-2 {
+    grid-column: 2 / -1;
+    grid-row: 1 / 2;
+}
+#grid-tops-3 {
+    grid-column: 2 / -1;
+    grid-row: 2 / -1;
+}
+
+/* Subscribe Now */
+
+.subscribe-now {
+    margin-top: 6rem;
+    background-color: var(--color-grey-4);
+    height: 315px;
+}
+    .subscribe-now .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .subscribe-now .sub-now {
+        text-align: start;
+        padding: 0;
+        flex: 1;
+    }
+        .subscribe-now .sub-now p {
+            padding: 0;
+            max-width: 400px;
+        }
+    .subscribe-now .sub-now-grey {
+        flex: 1;
+        background-color: var(--color-grey-1);
+        height: 315px;
+    }
+    .subscribe-now #subscribeNow {
+        position: relative;
+        border-radius: var(--border-radius-medium);
+        height: 46px;
+        width: 445px;
+    }
+        .subscribe-now #subscribeNow input {
+            border-radius: var(--border-radius-medium);
+            height: 100%;
+            width: 100%;
+            outline: none;
+            border: 1px solid var(--color-grey-1);
+            font-size: var(--font-size-14);
+            padding-left: 1rem;
+            padding-right: 4rem;
+        }
+        .subscribe-now #subscribeNow button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 110px;
+            height: 80%;
+            background-color: var(--color-theme);
+            color:var(--color-white);
+            font: var(--font-roboto);
+            border: none;
+            border-radius: var(--border-radius-medium);
+        }
+            .subscribe-now #subscribeNow button:hover {
+                background-color: var(--color-theme-dark);
+                color: var(--color-white);
+                transition: 200ms ease-in;
+            }
+
+/* Copyright */
+
+.copyright {
+    background-color: var(--color-dark);
+    height: 80px;
+}
 
 
-
-
-
-
-
-
+    .copyright .copyright-kenkata {
+        color: var(--color-white);
+        padding-top: 30px;
+    }
 
 @media (min-width: 578px) {
 
